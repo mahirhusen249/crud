@@ -1,0 +1,151 @@
+
+  
+  
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>crud</title>
+</head>
+<body>
+    <html> 
+    <head>  
+  <title>form  page</title>   
+  <link rel="stylesheet" href="crud.css">    
+  
+  <body>
+    </head>   
+    <div class="headar"> 
+    <h1>crud operation</h1>    
+</div>  <br>
+<form  action="insert.php" method="$_POST">   
+    <div class="allfiled">   
+         
+ <div class="name"> 
+    Name:<input type="text" name="name"id="name" placeholder="Enter your name"required><br><br>    
+</div>   
+    <!-- name:<input type="text" name="lname"><br><br>   -->
+   <div class="password"> 
+    password:<input type="" name="password" placeholder="Enter your password" required> <br><br>  
+    </div>     
+    <div class="Email">
+    Email:<input type="email" name="email" placeholder="Enter your Email">   <br><br>
+</div>    
+     <div class="id">  
+        <label for="">ID:</label>
+     <input type="id" name="id" placeholder="Enter your id"> <br><br>
+         </div>   
+         <div class="mobile_no">
+    Mobile NO:<input type="mobiile no"name ="mobile_No" placeholder="Enter your Mobile no"> 
+</div>  
+    <br>    
+    <div class="add">  
+        addrees:<input type="text" name="addrees" placeholder="Enter addrees">
+    </div> 
+    <br> 
+    <div class="L">   
+        Language <input type="checkbox"> English<input type="checkbox">Hindi <input type="checkbox">Gujarati
+    </div>   
+    <!-- <br>   -->
+   
+    <br>   
+     
+    <div class="radio">
+   Gender<input type="radio" name="gender" value="male"> 
+         <label for="male">male</label>
+        <input type="radio" name="gender"value="female">    
+        <label for="female">female</label>
+    </div>  
+        <br>    
+        <div class="area">  
+      other information <textarea id="other_information">   
+
+      </textarea>
+        </div>
+        <!-- age:<input type="text" name="age"><br><br>     -->
+
+         <!-- <input type="radio" name="gender" value="male"><br><br> 
+         <label for="male">male</label><br>
+        <input type="radio" name="gender"value="female">  -->
+         <!-- <label for="female">female</label><br> -->      
+
+         <div class="c">  
+        choose a  country<select name="country">   
+                <option value="india"> india   </option>   
+                <option value="U.S.A"> U.S.A   </option>
+                <option value="chaina"> chaina </option>
+                <option value="pakistan">pakistan</option> 
+        </div>    
+        <br>    
+        <br>
+   <div class="btn">
+  <input type="submit" value="submit"> 
+</div>
+           
+         
+     </div>
+</form>  
+</body>    
+</html>
+</body>
+</html>
+
+
+<?php     
+
+ include 'crud.html';   
+  
+    
+ 
+    
+   
+// include `crud.html`; {     
+// if(isset($_POST[`submit`]))    
+
+    
+ $servername="localhost";    
+ $username="root";   
+ $password="";  
+ $database="my_crud";     
+ 
+
+
+        $con = mysqli_connect("localhost","root","","my_crud");
+
+        if(!$con){
+            die('Connection failed'.mysqli_error($conn));
+        } 
+        if(isset($_POST['submit'])){
+          print_r($_POST);
+          exit;
+            $name=$_POST['name'];
+            $password=$_POST['password'];  
+            $email=$_POST['email'];
+            $gender=$_POST['gender'];   ;
+            $MobileNO=$_POST['mobile_No'];
+            $address=$_POST['address'];      
+            $Language=$_POST['language'];   
+            // $Gender=$_POST["Gender"];   
+            $other_information=$_POST['other_information'];  
+            $country=$_POST['country'];    
+            
+           
+//  $sql="INSERT INTO my_crud(`fname`,`password`,`email`,`gender`,`mobile_no`,`address`,`language`,`other_information`,`country`)VALUES('$name','$password','$email','$gender','$monile_NO','$address',`language`,`other_information`,`country`)";
+         
+$sql="INSERT INTO `crud_data`(`id`, `Name`, `password`, `Email`, `mobile_no`, `language`, `Gender`, `other_information`, `choose_a_country`, `address`) VALUES ('[$name]','[$password]','[$email]','[$gender]','[$mobile_NO]','[$address]','[$Language]','[other_information]','[country]',')";
+    
+  $result=mysqli_query($con,$sql);   
+  print_r($con,$result);    
+  if($result){   
+    echo "successfully"; 
+  } 
+  else{   
+    echo"error";
+  } 
+}
+ 
+
+
+
+?>

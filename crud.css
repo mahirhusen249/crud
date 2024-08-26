@@ -1,0 +1,46 @@
+.headar{   
+    text-align: center;   
+    border: solid black;    
+    background-color: aqua;   
+    padding-bottom:20px;
+}   
+.allfiled{  
+    font-size: 18px;
+    text-align: center;   
+    width: 100%;  
+    height: auto;   
+    background-color:bisque;   
+    margin-top:-30px;   
+    
+} 
+ .name{   
+     padding-bottom: 30px;   
+        
+
+
+}
+.password{   
+    margin-right: 20px;   
+    padding-bottom: 20px    ;
+} 
+.Email{   
+  padding-bottom: 20px;
+}
+.id{  
+    margin-left: 20px;   
+    padding-bottom: 20px;
+}  
+.mobile_no{    
+    margin-right: 34px;
+  padding-bottom: 20px;
+}    
+.L{    
+    padding-bottom:20px;
+}   
+.radio{   
+    padding-bottom: 20px;
+}  
+.area{   
+    padding-bottom: 20px; 
+}   
+ 
